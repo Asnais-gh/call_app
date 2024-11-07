@@ -1,4 +1,5 @@
 import 'package:call_app/const.dart';
+import 'package:call_app/view/home_page.dart';
 import 'package:call_app/view/register_page.dart';
 import 'package:call_app/widgets/custom_butten.dart';
 import 'package:call_app/widgets/custom_textfield.dart';
@@ -59,7 +60,12 @@ class LoginPage extends StatelessWidget {
                           obscureText: true,
                         ),
                         SizedBox(height: screenHeight * 0.0224646983311938),
-                        const CustomButten(buttenText: 'تسجيل الدخول'),
+                        CustomButten(
+                          buttenText: 'تسجيل الدخول',
+                          onTap: () {
+                            Navigator.pushNamed(context, HomePage.id);
+                          },
+                        ),
                       ],
                     ),
                   ),

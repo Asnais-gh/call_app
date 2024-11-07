@@ -1,5 +1,5 @@
 import 'package:call_app/const.dart';
-import 'package:call_app/view/register_page.dart';
+import 'package:call_app/view/home_page.dart';
 import 'package:call_app/widgets/custom_butten.dart';
 import 'package:call_app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +54,12 @@ class RegisterPage extends StatelessWidget {
                           obscureText: true,
                         ),
                         SizedBox(height: screenHeight * 0.0224646983311938),
-                        const CustomButten(buttenText: 'تسجيل جديد'),
+                        CustomButten(
+                          buttenText: 'تسجيل جديد',
+                          onTap: () {
+                            Navigator.pushNamed(context, HomePage.id);
+                          },
+                        ),
                       ],
                     ),
                   ),

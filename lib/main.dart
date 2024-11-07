@@ -1,3 +1,4 @@
+import 'package:call_app/view/home_page.dart';
 import 'package:call_app/view/log_in_page.dart';
 import 'package:call_app/view/register_page.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class CallApp extends StatelessWidget {
         routes: {
         LoginPage.id: (context) => const LoginPage(),
         RegisterPage.id: (context) => const RegisterPage(),
+        HomePage.id:(context)=> const HomePage(),
 
       },
       initialRoute: LoginPage.id,
