@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:call_app/const.dart';
-import 'package:call_app/view/pages/page_1.dart';
-import 'package:call_app/view/pages/page_2.dart';
-import 'package:call_app/view/pages/page_3.dart';
-import 'package:call_app/view/pages/page_4.dart';
+
+import 'package:call_app/view/pages/dialpad_page.dart';
+import 'package:call_app/view/pages/contacts_page.dart';
+import 'package:call_app/view/pages/call_history_page.dart';
+import 'package:call_app/view/pages/setting_page.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,48 +21,33 @@ class HomePageState extends State<HomePage> {
   int pageIndex = 0;
 
   final pages = [
-    const Page1(),
-    const Page2(),
-    const Page3(),
-    const Page4(),
+    const DialPadPage(),
+    const ContactsPage(),
+    const CallHistoryPage(),
+    const SettingPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(
-          Icons.menu,
-          color: Colors.white,
-        ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: const [
-            Text(
-              "الرصيد : 00.000",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: kColor,
-      ),
       body: pages[pageIndex],
       bottomNavigationBar: buildMyNavBar(context),
     );
   }
 
   Container buildMyNavBar(BuildContext context) {
+    // Get screen width and height for responsive adjustments
+    final Size screenSize = MediaQuery.of(context).size;
+    // Size(411.4285714285714, 890.2857142857143.3)
+    final double  iconsize = screenSize.width * 0.0850694444444445; // 35.0
+
     return Container(
       height: 50,
       decoration: BoxDecoration(
-        color: kColor,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+        gradient: kGradient,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(screenSize.width * 0.0486111111111111),
+          topRight: Radius.circular(screenSize.width * 0.0486111111111111),
         ),
       ),
       child: Row(
@@ -74,15 +61,15 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 0
-                ? const Icon(
-                    Icons.home_filled,
+                ? Icon(
+                    Icons.dialpad,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   )
-                : const Icon(
-                    Icons.home_outlined,
+                : Icon(
+                    Icons.dialpad_outlined,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   ),
           ),
           IconButton(
@@ -93,15 +80,15 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 1
-                ? const Icon(
-                    Icons.work_rounded,
+                ?  Icon(
+                    Icons.contacts,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   )
-                : const Icon(
-                    Icons.work_outline_outlined,
+                :  Icon(
+                    Icons.contacts_outlined,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   ),
           ),
           IconButton(
@@ -112,15 +99,15 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 2
-                ? const Icon(
-                    Icons.widgets_rounded,
+                ?  Icon(
+                    Icons.history,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   )
-                : const Icon(
-                    Icons.widgets_outlined,
+                :  Icon(
+                    Icons.history_outlined,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   ),
           ),
           IconButton(
@@ -131,15 +118,15 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 3
-                ? const Icon(
-                    Icons.person,
+                ?  Icon(
+                    Icons.settings,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   )
-                : const Icon(
-                    Icons.person_outline,
+                :  Icon(
+                    Icons.settings_outlined,
                     color: Colors.white,
-                    size: 35,
+                    size: iconsize,
                   ),
           ),
         ],

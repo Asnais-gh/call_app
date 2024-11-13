@@ -2,9 +2,14 @@ import 'package:call_app/const.dart';
 import 'package:flutter/material.dart';
 
 class CustomButten extends StatelessWidget {
-  const CustomButten({super.key, required this.buttenText, this.onTap});
+  const CustomButten(
+      {super.key,
+      required this.buttenText,
+      this.onTap,
+      this.width = double.infinity});
   final String buttenText;
   final VoidCallback? onTap;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +17,10 @@ class CustomButten extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: kColor,
+          gradient: kGradient,
           borderRadius: BorderRadius.circular(16),
         ),
-        width: double.infinity,
+        width: width,
         height: 60,
         child: Center(
             child: Text(buttenText,
