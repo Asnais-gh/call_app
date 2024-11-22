@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_element, avoid_print
 
 import 'package:call_app/const.dart';
+import 'package:call_app/view/ongoing_call_page.dart';
 import 'package:flutter/material.dart';
 
 class CustomDialPad extends StatefulWidget {
@@ -127,7 +128,9 @@ class CustomDialPadState extends State<CustomDialPad> {
                 gradient: kGradient,
               ),
               child: ElevatedButton(
-                onPressed: _onCallPressed,
+                onPressed: () {
+                  Navigator.pushNamed(context, OngoingCallPage.id);// Navigate to OngoingCallPage
+                },
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   padding:

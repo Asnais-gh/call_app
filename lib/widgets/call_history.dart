@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:call_app/const.dart';
 import 'package:call_app/widgets/custom_text.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';

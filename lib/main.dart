@@ -1,8 +1,9 @@
-import 'package:call_app/LogInPages/otp_page.dart';
-import 'package:call_app/LogInPages/phone_login_page.dart';
+import 'package:call_app/view/LogInPages/otp_page.dart';
+import 'package:call_app/view/LogInPages/phone_login_page.dart';
 import 'package:call_app/view/home_page.dart';
 import 'package:call_app/view/log_in_page.dart';
-import 'package:call_app/LogInPages/user_name_login.dart';
+import 'package:call_app/view/LogInPages/user_name_login.dart';
+import 'package:call_app/view/ongoing_call_page.dart';
 import 'package:call_app/widgets/test.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,7 @@ class CallApp extends StatelessWidget {
         PhoneLogInPaage.id:(context)=> const PhoneLogInPaage(),
         OTPPage.id:(context)=> const OTPPage(),
         TestCall.id:(context)=> const TestCall(),
+        OngoingCallPage.id:(context)=> const OngoingCallPage(),
       },
       initialRoute: LoginPage.id,
     );

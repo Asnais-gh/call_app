@@ -1,6 +1,5 @@
 import 'package:call_app/const.dart';
-import 'package:call_app/LogInPages/phone_login_page.dart';
-import 'package:call_app/LogInPages/user_name_login.dart';
+import 'package:call_app/view/LogInPages/phone_login_page.dart';
 import 'package:call_app/widgets/custom_butten.dart';
 import 'package:call_app/widgets/custom_text.dart';
 import 'package:call_app/widgets/test.dart';

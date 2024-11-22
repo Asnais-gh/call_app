@@ -1,7 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:call_app/const.dart';
-
 import 'package:call_app/view/pages/dialpad_page.dart';
 import 'package:call_app/view/pages/contacts_page.dart';
 import 'package:call_app/view/pages/call_history_page.dart';
@@ -39,7 +36,7 @@ class HomePageState extends State<HomePage> {
     // Get screen width and height for responsive adjustments
     final Size screenSize = MediaQuery.of(context).size;
     // Size(411.4285714285714, 890.2857142857143.3)
-    final double  iconsize = screenSize.width * 0.0850694444444445; // 35.0
+    final double iconsize = screenSize.width * 0.0850694444444445; // 35.0
 
     return Container(
       height: 50,
@@ -80,12 +77,12 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 1
-                ?  Icon(
+                ? Icon(
                     Icons.contacts,
                     color: Colors.white,
                     size: iconsize,
                   )
-                :  Icon(
+                : Icon(
                     Icons.contacts_outlined,
                     color: Colors.white,
                     size: iconsize,
@@ -99,12 +96,12 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 2
-                ?  Icon(
+                ? Icon(
                     Icons.history,
                     color: Colors.white,
                     size: iconsize,
                   )
-                :  Icon(
+                : Icon(
                     Icons.history_outlined,
                     color: Colors.white,
                     size: iconsize,
@@ -118,12 +115,12 @@ class HomePageState extends State<HomePage> {
               });
             },
             icon: pageIndex == 3
-                ?  Icon(
+                ? Icon(
                     Icons.settings,
                     color: Colors.white,
                     size: iconsize,
                   )
-                :  Icon(
+                : Icon(
                     Icons.settings_outlined,
                     color: Colors.white,
                     size: iconsize,
